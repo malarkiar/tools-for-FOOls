@@ -1,0 +1,33 @@
+{
+  "name": "vanilla-typescript-app",
+  "version": "1.0.0",
+  "description": "A vanilla TypeScript application with testing and linting",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "tsc && node dist/index.js",
+    "test": "jest --watchAll",
+    "lint": "eslint . --ext .ts",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.6.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^28.1.1",
+    "@types/node": "^18.0.0",
+    "eslint": "^8.12.0",
+    "jest": "^28.1.1",
+    "ts-jest": "^28.0.5",
+    "ts-node": "^10.7.0",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0"
+    // ... other development dependencies
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  }
+}
