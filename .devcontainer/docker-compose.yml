@@ -1,12 +1,1 @@
-version: '3.2'
 
-services:
-  devcontainer:
-    image: toolsForFOOls:0.1
-    build: .
-    container_name: toolsForFOOls-dev-container
-    hostname: toolsForFOOls-dev.local
-    working_dir: /src
-    volumes:
-       - ..:/src
-    command: sleep infinity
