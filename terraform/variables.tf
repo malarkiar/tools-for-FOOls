@@ -46,6 +46,12 @@ variable "vpc_cidr_block" {
   default     = "10.0.0.0/16"
 }
 
+variable "aws_availability_zones" {
+  description = "List of availability zones in the region"
+  type        = list(string)
+  default     = ["us-west-2a", "us-west-2b"]  # Modify as needed
+}
+
 variable "subnet_cidr_blocks" {
   description = "The list of CIDR blocks for the subnets"
   type        = list(string)
