@@ -1,10 +1,19 @@
 {
-	"name": "Tools For FOOls",
-	"dockerComposeFile": [
-		"docker-compose.yml"
-	],
-	"service": "devcontainer",
-	"workspaceFolder": "/src",
-	"shutdownAction": "stopCompose",
-	"remoteUser": "node"
+    "name": "Tools For FOOls",
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+    "settings": { 
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+        "dbaeumer.vscode-eslint",
+        "ms-vscode.vscode-typescript-tslint-plugin",
+        "esbenp.prettier-vscode"
+    ],
+    "postCreateCommand": "npm install && npm test",
+    "runArgs": [],
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+    ],
+    "forwardPorts": [3000],
+    "workspaceFolder": "/workspace"
 }
