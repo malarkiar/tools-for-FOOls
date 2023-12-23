@@ -1,6 +1,6 @@
 # Create a new VPC
 resource "aws_vpc" "my_vpc" {
-  cidr_block           = "10.0.0.0/16"
+  cidr_block           = var.vpc_cidr_block
   enable_dns_support   = true
   enable_dns_hostnames = true
 
@@ -9,20 +9,21 @@ resource "aws_vpc" "my_vpc" {
   }
 }
 
-# Create subnet - repeat this block for additional subnets
+# Create subnets - iterate over the subnet CIDR blocks
 resource "aws_subnet" "my_subnet" {
+  count             = length(var.subnet_cidr_blocks)
   vpc_id            = aws_vpc.my_vpc.id
-  cidr_block        = "10.0.1.0/24"
-  availability_zone = "us-west-2a"  # Replace with your desired AZ
+  cidr_block        = var.subnet_cidr_blocks[count.index]
+  availability_zone = element(var.aws_availability_zones, count.index)
 
   tags = {
-    Name = "my-subnet"
+    Name = "my-subnet-${count.index + 1}"
   }
 }
 
 # Create a security group for the ECS tasks
 resource "aws_security_group" "ecs_sg" {
-  name        = "ecs-security-group"
+  name        = var.security_group_name
   description = "Security group for ECS tasks"
   vpc_id      = aws_vpc.my_vpc.id
 
@@ -42,6 +43,6 @@ resource "aws_security_group" "ecs_sg" {
   }
 
   tags = {
-    Name = "ecs-security-group"
+    Name = var.security_group_name
   }
 }
