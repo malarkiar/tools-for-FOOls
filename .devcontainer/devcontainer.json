@@ -6,7 +6,6 @@
 			"settings": {},
 			"extensions": [
 				"streetsidesoftware.code-spell-checker",
-				"ms-azuretools.vscode-docker",
 				"eamodio.gitlens",
 				"esbenp.prettier-vscode",
 				"ms-vscode.vscode-typescript-next",
