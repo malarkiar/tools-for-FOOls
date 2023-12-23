@@ -1,19 +1,21 @@
 {
-    "name": "Tools For FOOls",
-    "dockerFile": "Dockerfile",
-    "settings": { 
-        "terminal.integrated.shell.linux": "/bin/bash"
-    },
-    "extensions": [
-        "dbaeumer.vscode-eslint",
-        "ms-vscode.vscode-typescript-tslint-plugin",
-        "esbenp.prettier-vscode"
-    ],
-    "postCreateCommand": "npm test",
-    "runArgs": [],
-    "mounts": [
-        "source=${localWorkspaceFolder},target=/usr/src/app,type=bind,consistency=cached"
-    ],
-    "forwardPorts": [3000],
-    "workspaceFolder": "/usr/src/app"
+	"name": "Tools for FOOls",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:dev-20",
+	// "features": {},
+	"customizations": {
+		"vscode": {
+			"settings": {},
+			"extensions": [
+				"streetsidesoftware.code-spell-checker"
+			]
+		}
+	},
+	"forwardPorts": [3000],
+	"portsAttributes": {
+		"3000": {
+			"label": "Hello Remote World",
+			"onAutoForward": "notify"
+		}
+	},
+	"postCreateCommand": "npm install"
 }
