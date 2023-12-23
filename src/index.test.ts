@@ -1,5 +1,3 @@
-// src/index.test.ts
-
 import { hello } from "./index";
 
 describe("hello function", () => {

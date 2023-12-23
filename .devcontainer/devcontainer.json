@@ -25,5 +25,5 @@
 			"onAutoForward": "notify"
 		}
 	},
-	"postCreateCommand": "npm install && npm test"
+	"postCreateCommand": "npm install"
 }

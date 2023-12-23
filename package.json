@@ -5,9 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "tsc && node dist/index.js",
+    "build": "tsc",
     "test": "jest",
     "lint": "eslint . --ext .ts",
-    "build": "tsc",
     "test-watch": "jest --watchAll"
   },
   "keywords": [],
