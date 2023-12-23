@@ -5,9 +5,10 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "tsc && node dist/index.js",
-    "test": "jest --watchAll",
+    "test": "jest",
     "lint": "eslint . --ext .ts",
-    "build": "tsc"
+    "build": "tsc",
+    "test-watch": "jest --watchAll"
   },
   "keywords": [],
   "author": "",
