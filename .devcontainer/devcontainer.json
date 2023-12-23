@@ -1,19 +1,28 @@
 {
 	"name": "Tools for FOOls",
 	"image": "mcr.microsoft.com/devcontainers/typescript-node:dev-20",
-	// "features": {},
 	"customizations": {
 		"vscode": {
 			"settings": {},
 			"extensions": [
-				"streetsidesoftware.code-spell-checker"
+				"streetsidesoftware.code-spell-checker",
+				"ms-azuretools.vscode-docker",
+				"eamodio.gitlens",
+				"esbenp.prettier-vscode",
+				"ms-vscode.vscode-typescript-next",
+				"hashicorp.terraform",
+				"github.vscode-github-actions",
+				"pmneo.tsimporter",
+				"christian-kohler.path-intellisense",
+				"gregorbiswanger.json2ts",
+				"orta.vscode-jest"
 			]
 		}
 	},
 	"forwardPorts": [3000],
 	"portsAttributes": {
 		"3000": {
-			"label": "Hello Remote World",
+			"label": "3000",
 			"onAutoForward": "notify"
 		}
 	},
